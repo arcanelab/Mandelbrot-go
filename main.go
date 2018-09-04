@@ -48,7 +48,7 @@ func gradient(t float64) colorful.Color {
 		right = i + 1
 	}
 
-	// normalize t to the renage between the gradient color points
+	// normalize t to the range between the gradient color points
 	T := (t - gradientData[left].position) / (gradientData[right].position - gradientData[left].position)
 	return gradientData[left].color.BlendLab(gradientData[right].color, T).Clamped()
 }
